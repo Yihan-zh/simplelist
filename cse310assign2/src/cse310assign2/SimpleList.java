@@ -34,7 +34,7 @@ public class SimpleList {
 	public void add(int number) {
 	    int size = list.length;
 	    
-	    if(count == 10) {
+	    if(count == size) {
 	    
 	    size = (int) (size + size * 0.5);
 	    int[] templist = new int[size];
