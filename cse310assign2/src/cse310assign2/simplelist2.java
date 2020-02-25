@@ -142,23 +142,5 @@ public class simplelist2 {
 		return list.length;
 	}
 
-	
-	public static void main(String[] args) {
-		  simplelist2 newlist = new simplelist2();
-		  newlist.add(3);
-		  newlist.add(3);
-		  newlist.add(3);
-		  
-		  newlist.append(4);
-		  newlist.add(3);
-		  newlist.add(3);
-		  newlist.add(3);
-		  newlist.add(3);
-		  newlist.add(3);
-		  newlist.add(6);
-		  newlist.append(4);
-		 
-		  System.out.println(newlist.toString());
-		  System.out.println(newlist.first());
-	  }
+
 }
