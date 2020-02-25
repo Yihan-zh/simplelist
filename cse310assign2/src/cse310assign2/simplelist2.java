@@ -1,17 +1,7 @@
 package cse310assign2;
 
-import java.util.Arrays;
-
-/**
-	 *Name: Yihan Zhang
-	 *Class ID: 253
-	 *Assignment 1
-	 *This is a class for array. .......
-	 *This class allows you to add,remove,search,count and return entire array as String
-*/
-
-public class SimpleList {
-	/**
+public class simplelist2 {
+    /**
 	 The global variables: the array 
 	 */
 	int[] list;
@@ -23,28 +13,18 @@ public class SimpleList {
 	/**
 	 * class constructor
 	 */
-	public SimpleList() {
+	public simplelist2() {
 		list = new int[10];
 		count = 0;
 	}
-    
+   
 	/**
 	 * add the input to the first position of array after moving existing elements backward
 	 */
 	public void add(int number) {
 	    int size = list.length;
 	    
-	    if(count == size) {
-	    
-	    size = (int) (size + size * 0.5);
-	    int[] templist = new int[size];
-	    for(int index = 0; index < count; index++) {
-	    
-	    templist[index] = list [index];
-	    }
-	    list = new int[size];
-	    list = templist;
-	    }
+	   
 	    
 		for(int index = (size-1); index > 0; index--) {
 			list[index] = list[index-1];
@@ -62,9 +42,7 @@ public class SimpleList {
 	index = 0;
 	foundnumber=false;
 	int size = list.length;
-    int empty = 0;
-    empty = size - count;
-
+   
 	while( index < count) {
 
 	
@@ -93,18 +71,7 @@ public class SimpleList {
 	}
 	
 	
-    if(empty >= (double) (size * 0.25)) {
-    
-    size = (int) (size * 0.75);
-    int[] templist = new int[size];
-    for(int indexx = 0; indexx < count; indexx++) {
-    
-    templist[indexx] = list [indexx];
-    }
-    list = new int[size];
-    list = templist;
-    }
-	
+   
 	}
 
 	/**
@@ -143,10 +110,55 @@ public class SimpleList {
 		}
 
 		return result;
+
+	}
+	
+	public void append(int number) {
+        int size = list.length;
+	    
+	    if(count == size) {
+	    
+	    size = (int) (size + size * 0.5);
+	    int[] templist = new int[size];
+	    for(int index = 0; index < count; index++) {
+	    
+	    templist[index] = list [index];
+	    }
+	    list = new int[size];
+	    list = templist;
+	    }
+	    
+		
+		list[count] = number;
+		count++;
+	}
+	
+	/** return fist number*/
+	public int first() {
+		return list[0];
+	}
+	/** return size of array*/
+	public int size() {
+		return list.length;
+	}
+
+	
+	public static void main(String[] args) {
+		  simplelist2 newlist = new simplelist2();
+		  newlist.add(3);
+		  newlist.add(3);
+		  newlist.add(3);
+		  
+		  newlist.append(4);
+		  newlist.add(3);
+		  newlist.add(3);
+		  newlist.add(3);
+		  newlist.add(3);
+		  newlist.add(3);
+		  newlist.add(6);
+		  newlist.append(4);
+		 
+		  System.out.println(newlist.toString());
+		  System.out.println(newlist.first());
+	  }
 }
-
-	 
- 
-}
-
-
