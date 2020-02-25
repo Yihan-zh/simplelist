@@ -1,4 +1,7 @@
 package cse310assign2;
+
+import java.util.Arrays;
+
 /**
 	 *Name: Yihan Zhang
 	 *Class ID: 253
@@ -29,8 +32,21 @@ public class SimpleList {
 	 * add the input to the first position of array after moving existing elements backward
 	 */
 	public void add(int number) {
-		
-		for(int index = 9; index > 0; index--) {
+	    int size = list.length;
+	    
+	    if(count == 10) {
+	    
+	    size = (int) (size + size * 0.5);
+	    int[] templist = new int[size];
+	    for(int index = 0; index < count; index++) {
+	    
+	    templist[index] = list [index];
+	    }
+	    list = new int[size];
+	    list = templist;
+	    }
+	    
+		for(int index = (size-1); index > 0; index--) {
 			list[index] = list[index-1];
 		}
 		list[0] = number;
@@ -45,27 +61,50 @@ public class SimpleList {
 	int index;
 	index = 0;
 	foundnumber=false;
+	int size = list.length;
+    int empty = 0;
+    empty = size - count;
 
 	while( index < count) {
 
-		
+	
 		
 		if(list[index] == number) {
-				count--;
+				
 				foundnumber=true;
 				
 			}
 		
 		
-		if((foundnumber)&&(index<9)) {
+		if((foundnumber)&&(index<(size-1))) {
 			list[index] = list[index + 1];
 		}
 		if(foundnumber) {
-			list[9] = 0;
+			list[size-1] = 0;
+			
 		}
-		index++;
-	}
+	
+			index++;
 		
+		
+	}
+	if(foundnumber) {
+		count--;
+	}
+	
+	
+    if(empty >= (double) (size * 0.25)) {
+    
+    size = (int) (size * 0.75);
+    int[] templist = new int[size];
+    for(int indexx = 0; indexx < count; indexx++) {
+    
+    templist[indexx] = list [indexx];
+    }
+    list = new int[size];
+    list = templist;
+    }
+	
 	}
 
 	/**
@@ -81,7 +120,8 @@ public class SimpleList {
 	public String toString() {
 	String array;
 	array = "";
-	for(int index = 0; index < count; index++) {
+	array += list[0];
+	for(int index = 1; index < count; index++) {
 		array += " " + list[index]; 
 	}
 
@@ -105,7 +145,7 @@ public class SimpleList {
 		return result;
 }
 
-
+ 
 }
 
 
