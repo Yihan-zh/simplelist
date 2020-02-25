@@ -1,16 +1,13 @@
-
 package cse310assign2;
 /**
 	 *Name: Yihan Zhang
 	 *Class ID: 253
 	 *Assignment 1
-	 *This is a class for array. 
+	 *This is a class for array. .......
 	 *This class allows you to add,remove,search,count and return entire array as String
 */
 
 public class SimpleList {
-
-	
 	/**
 	 The global variables: the array 
 	 */
@@ -27,7 +24,7 @@ public class SimpleList {
 		list = new int[10];
 		count = 0;
 	}
-
+    int sjfdsa;
 	/**
 	 * add the input to the first position of array after moving existing elements backward
 	 */
