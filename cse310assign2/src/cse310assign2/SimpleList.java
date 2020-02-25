@@ -24,7 +24,7 @@ public class SimpleList {
 		list = new int[10];
 		count = 0;
 	}
-    int sjfdsa;
+    
 	/**
 	 * add the input to the first position of array after moving existing elements backward
 	 */
