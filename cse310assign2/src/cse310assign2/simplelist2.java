@@ -1,5 +1,12 @@
 package cse310assign2;
 
+/**
+	 *Name: Yihan Zhang
+	 *Class ID: 253
+	 *Assignment 1
+	 *This is a class for array. .......
+	 *This class allows you to add,remove,search,count and return entire array as String
+*/
 public class simplelist2 {
     /**
 	 The global variables: the array 
@@ -24,7 +31,18 @@ public class simplelist2 {
 	public void add(int number) {
 	    int size = list.length;
 	    
-	   
+	    if(count == size) {
+		    
+		    size = (int) (size + size * 0.5);
+		    int[] templist = new int[size];
+		    for(int index = 0; index < count; index++) {
+		    
+		    templist[index] = list [index];
+		    }
+		    list = new int[size];
+		    list = templist;
+		    }
+		    
 	    
 		for(int index = (size-1); index > 0; index--) {
 			list[index] = list[index-1];
@@ -42,7 +60,9 @@ public class simplelist2 {
 	index = 0;
 	foundnumber=false;
 	int size = list.length;
-   
+	int empty = 0;
+    empty = size - count;
+
 	while( index < count) {
 
 	
@@ -70,7 +90,17 @@ public class simplelist2 {
 		count--;
 	}
 	
-	
+	 if(empty >= (double) (size * 0.25)) {
+		    
+		    size = (int) (size * 0.75);
+		    int[] templist = new int[size];
+		    for(int indexx = 0; indexx < count; indexx++) {
+		    
+		    templist[indexx] = list [indexx];
+		    }
+		    list = new int[size];
+		    list = templist;
+		    }
    
 	}
 
